@@ -29,7 +29,8 @@ class ProductParser
                     switch($document->nodeType) // we can create rules here for different type of tags
                     {
                         case \XMLReader::ELEMENT:
-                            if ($document->name == 'price') {
+                            if ($document->name == 'price') 
+                            {
                                 $property = 'currency';
                                 $product->{$property} =$document->getAttribute('currency');;
                             }
@@ -37,15 +38,18 @@ class ProductParser
                             $product->{$property} = '';
                             break;
                         case \XMLReader::TEXT:
-                            if(isset($property)) {
-                                if( null !== $property  ){
+                            if(isset($property)) 
+                            {
+                                if( null !== $property  )
+                                {
                                     $product->{$property} = $document->value;
                                     $property = null;
                                 }
                             } 
                             break;
                         case \XMLReader::CDATA:
-                            if(isset($property)) {
+                            if(isset($property)) 
+                            {
                                 if( null !== $property  ){
                                     $product->{$property} = $document->value;
                                     $property = null;
