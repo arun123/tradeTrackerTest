@@ -37,7 +37,6 @@ class ProductParser
                             $product->{$property} = '';
                             break;
                         case \XMLReader::TEXT:
-
                             if(isset($property)) {
                                 if( null !== $property  ){
                                     $product->{$property} = $document->value;
@@ -46,7 +45,6 @@ class ProductParser
                             } 
                             break;
                         case \XMLReader::CDATA:
-
                             if(isset($property)) {
                                 if( null !== $property  ){
                                     $product->{$property} = $document->value;
