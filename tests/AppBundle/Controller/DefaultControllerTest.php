@@ -12,7 +12,7 @@ class DefaultControllerTest extends WebTestCase
 
         $crawler = $client->request('GET', '/');
 
-        $this->assertContains('TradeTracker', $client->getResponse()->getContent());
+        $this->assertContains('Click submit to process the feed!', $client->getResponse()->getContent());
     }
 
     public function testProcessFeed()
