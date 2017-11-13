@@ -10,4 +10,4 @@ please run the following command to dump the asset file
 php bin/console assets:install --symlink web
 
 
-Used XMLReader to keep the memory consumption minimum, seperated the Product Parsing to a [service](https://github.com/arun123/tradeTrackerTest/blob/master/src/AppBundle/Service/ProductParser.php)
+Used XMLReader to keep the memory consumption minimum, seperated the Product Parsing to a [service class](https://github.com/arun123/tradeTrackerTest/blob/master/src/AppBundle/Service/ProductParser.php)
