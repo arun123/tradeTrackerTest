@@ -12,4 +12,4 @@ php bin/console assets:install --symlink web
 
 Used XMLReader to keep the memory consumption minimum, seperated the Product Parsing to a [service class](https://github.com/arun123/tradeTrackerTest/blob/master/src/AppBundle/Service/ProductParser.php)
 
-[test files](https://github.com/arun123/tradeTrackerTest/tree/master/tests/AppBundle)
+[Test files](https://github.com/arun123/tradeTrackerTest/tree/master/tests/AppBundle)
