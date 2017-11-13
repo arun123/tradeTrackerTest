@@ -23,7 +23,7 @@ class ProductParser
                     if('product' === $document->name && $document->nodeType === \XMLReader::END_ELEMENT) // fetch all the tags until the end of product tag
                     {
                         array_push($products, $product);
-                        $product = null;
+                        unset($product);
                         break;
                     }
                     switch($document->nodeType) // we can create rules here for different type of tags
@@ -37,6 +37,15 @@ class ProductParser
                             $product->{$property} = '';
                             break;
                         case \XMLReader::TEXT:
+
+                            if(isset($property)) {
+                                if( null !== $property  ){
+                                    $product->{$property} = $document->value;
+                                    $property = null;
+                                }
+                            } 
+                            break;
+                        case \XMLReader::CDATA:
 
                             if(isset($property)) {
                                 if( null !== $property  ){

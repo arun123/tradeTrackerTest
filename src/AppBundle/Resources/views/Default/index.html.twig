@@ -23,7 +23,7 @@
   <div class="card-body">
     <h6 class="card-title">{{ product.name }}</h6>
     <i class="badge badge-warning">{{product.price}} {{product.currency}}</i>
-    <p class="card-text">{{ product.description }}</p>
+    <p class="card-text">{{ product.description | limitTo: 100 }}{{ product.description.length > 20 ? '...' : ''}}</p>
     
     <a target="_BLANK" href="{{ product.productURL }}"  class="badge badge-default card-link">PRODUCT LINK</a>
   </div>

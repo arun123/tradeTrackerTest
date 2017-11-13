@@ -12,3 +12,5 @@ RUN curl -sS https://getcomposer.org/installer | php \
     && mv composer.phar /usr/local/bin/composer
 
 RUN docker-php-ext-install pdo pdo_mysql opcache intl && a2enmod rewrite && mkdir /var/www/html/web
+
+COPY tradeTrackerTest/ /var/www/tradeTrackerTest/
