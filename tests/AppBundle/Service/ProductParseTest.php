@@ -36,7 +36,8 @@ class ProductParserTest extends WebTestCase
         $products = $productParser->parseDocument($document);
 
         $this->assertCount(1, $products);
-
+        
+        $this->assertAttributeNotEmpty('productID', $products[0]); 
         $this->assertAttributeNotEmpty('name', $products[0]); 
         $this->assertAttributeNotEmpty('description', $products[0]); 
         $this->assertAttributeNotEmpty('imageURL', $products[0]);
