@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div ng-controller="FeedCtrl">
+<div class="jumbotron">
+<!--form class="form-search" role="search" action="{{ path('process_feed') }}" method="get"-->
+    <div class="input-group">
+        <input type="text" class="form-control" ng-model="feedURL" name="feed" placeholder="Feed Url" />
+        <span class="input-group-btn">
+            <button class="btn btn-info" ng-click="fetchFeed()" >
+                <i class="fa fa-search"></i> SUBMIT
+            </button>
+        </span>
+    </div>
+<!--/form-->
+</div>
+<toaster-container></toaster-container>
+<div class="row"  spinner-start-active="false"  us-spinner="{radius:30, width:8, length: 16}" spinner-key="well">
+ {% verbatim %}
+<div class="card col-md-3"  ng-repeat="product in products track by product.name" style="width: 20rem;">
+  <div ></div>
+  <img class="card-img-top" height="220" ng-src="{{product.imageURL}}" alt="">
+  <div class="card-body">
+    <h6 class="card-title">{{ product.name }}</h6>
+    <i class="badge badge-warning">{{product.price}} {{product.currency}}</i>
+    <p class="card-text">{{ product.description }}</p>
+    
+    <a target="_BLANK" href="{{ product.productURL }}"  class="badge badge-default card-link">PRODUCT LINK</a>
+  </div>
+</div>
+ {% endverbatim %}
+</div>
+
+</div>
+{% endblock %}
