@@ -17,7 +17,7 @@
 <div class="row"  spinner-start-active="false"  us-spinner="{radius:30, width:8, length: 16}" spinner-key="well">
   {% verbatim %}
   <div class="card col-md-3"  ng-repeat="product in products track by product.name" style="width: 20rem;">
-      <img class="card-img-top" height="220" ng-src="{{product.imageURL}}" alt="">
+      <img class="card-img-top" height="220" ng-src="{{product.imageURL}}" alt=".">
       <div class="card-body">
           <h6 class="card-title">{{ product.name }}</h6>
           <i class="badge badge-warning">{{product.price}} {{product.currency}}</i>
